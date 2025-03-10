@@ -1,4 +1,7 @@
 import { getLocaleOnServer } from '@/i18n/server'
+import Image from 'next/image'  // 引入Next.js的Image组件
+import Logo from '@/public/logo.svg'  // 替换为你的Logo实际路径
+
 
 import './styles/globals.css'
 import './styles/markdown.scss'
