@@ -129,7 +129,7 @@ const Main: FC<IMainProps> = () => {
       fetchChatList(currConversationId).then((res: any) => {
         const { data } = res
         const newChatList: ChatItem[] = generateNewChatListWithOpenStatement(notSyncToStateIntroduction, notSyncToStateInputs)
-
+        data.reverse()
         data.forEach((item: any) => {
           newChatList.push({
             id: `question-${item.id}`,
