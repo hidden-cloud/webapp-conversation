@@ -16,7 +16,7 @@ const parseHtmlBlocks = (content: string) => {
   let lastIndex = 0;
 
   // 匹配开闭标签对
-  const tagPattern = /<(\w+)(\s[^>]*)?>([\s\S]*?)<\/\1>/g;
+  const tagPattern = /<details(\s[^>]*)?>([\s\S]*?)<\/details>/gi;
 
   while (true) {
     const match = tagPattern.exec(remaining);
@@ -53,7 +53,7 @@ const parseHtmlBlocks = (content: string) => {
 // 安全渲染组件
 const SafeHTML = ({ html }: { html: string }) => {
   const sanitized = DOMPurify.sanitize(html, {
-    ALLOWED_TAGS: ['details', 'summary', 'div', 'span'],
+    ALLOWED_TAGS: ['details', 'summary'],
     ALLOWED_ATTR: ['style', 'open']
   });
 
@@ -63,7 +63,6 @@ const SafeHTML = ({ html }: { html: string }) => {
 export function Markdown(props: { content: string }) {
 
   const blocks = parseHtmlBlocks(props.content);
-  console.log(blocks)
 
   return (
     <div className="markdown-body">
