@@ -13,7 +13,7 @@ export const APP_INFO: AppInfo = {
 export const isShowPrompt = false
 export const promptTemplate = ''
 
-export const API_PREFIX = '/api'
+export const API_PREFIX = '/ai/api'
 
 export const LOCALE_COOKIE_NAME = 'locale'
 
